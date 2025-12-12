@@ -1,0 +1,89 @@
+---
+title: 'Native Connections'
+description: 'Connecting Maia to 3rd party essential business tools'
+---
+
+## Seamless Tool Connection
+
+Maia integrates natively with popular business applications, allowing workflows to read, write, and manage data across your existing tools.
+
+You don't need to manually configure "nodes" or "connectors." Just tell Maia what you need, and it automatically uses the right connection.
+
+## How Connections Work
+
+### One-Time Authorization
+
+<Steps>
+  <Step title="First Use">
+    When you mention a tool for the first time:
+    ```
+    "Check my Gmail for messages from customers"
+    ```
+  </Step>
+  
+  <Step title="OAuth Flow">
+    Maia prompts you to authorize access via standard OAuth
+
+    <Frame> <img src="/images/connect_gmail.jpg" alt="Edit modular prompt sections" className="my-6 rounded-lg border border-zinc-300 dark:border-zinc-600" noZoom /></Frame>
+  </Step>
+  
+  <Step title="Grant Permissions">
+    You approve the specific permissions Maia needs (e.g., "Read Gmail messages")
+  </Step>
+  
+  <Step title="Save Token">
+    Your authorization is encrypted and stored securely
+  </Step>
+  
+  <Step title="Future Use">
+    Maia automatically uses the saved authorization — no repeated logins needed
+  </Step>
+</Steps>
+ 
+Optionally, you can have a look at available connections through Connections settings in your Maia workspace, and connect your accounts there as well.
+
+<Frame><img src="/images/connections_settings.jpg" alt="Connections settings in Maia" className="my-6 rounded-lg border border-zinc-300 dark:border-zinc-600" noZoom /></Frame>
+
+### Automatic Action Selection
+
+You don't specify action use, Maia infers what you need:
+
+<Tab title="You Say">
+  ```
+  "Read emails from support@customer.com, 
+  add a row to the 'Customer Feedback' Google Sheet 
+  with the sender, subject, and date."
+  ```
+</Tab>
+
+<Tab title="Maia Understands">
+  1. Gmail: Search inbox
+  2. Gmail: Filter by sender
+  3. Gmail: Extract subject and date
+  4. Google Sheets: Find 'Customer Feedback' sheet
+  5. Google Sheets: Append new row
+</Tab>
+
+## Privacy & Data Access
+
+<Warning>
+  **Important:** Maia only accesses data needed for your specific workflows. The AI model processes data transiently — nothing is stored permanently without your explicit instruction.
+</Warning>
+
+### What Maia Can See
+- Only data from authorized accounts
+- Only during workflow execution
+- Only for the specific task requested
+
+### What Maia Cannot See
+- Data from non-authorized accounts
+- Information outside the workflow scope
+- Historical data after workflow completes
+
+### Your Controls
+- Revoke access anytime
+- Audit responses show what was accessed
+
+<Card title="Next: Intelligent Action Use" icon="brain" href="/integrations/intelligent-actions">
+  Learn how Maia dynamically selects the right tools for each task
+</Card>

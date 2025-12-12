@@ -1,0 +1,112 @@
+---
+title: 'The Conversation Interface'
+description: 'How to communicate effectively with your AI teammate'
+---
+
+## Talking to Maia
+
+Maia's interface is designed for natural conversation. You don't need to learn special commands or syntax — just describe what you need in your own words.
+
+## How the Interface Works
+
+Everything happens in the same chat interface. When you describe what you need, Maia collaborates with you through conversation to understand your requirements and define the workflow. As Maia starts planning your solution, a board view appears on the right side, visualizing the workflow steps.
+
+**During the conversation, you can:**
+- Discuss requirements and goals
+- Develop and refine strategy
+- Review the visual workflow on the board
+- Ask questions and provide clarifications
+- Request adjustments based on your needs
+- Approve the plan when ready
+
+**Example conversation:**
+```
+You: I need to track customer feedback from emails
+Maia: I can help with that. Should I:
+      1. Monitor a specific email inbox?
+      2. Look for particular keywords or senders?
+      3. Store the feedback in a spreadsheet?
+You: Yes, monitor support@mybakery.com for emails 
+     with "feedback" or "suggestion" in the subject
+Maia: Got it. I'll create a workflow that checks 
+     that inbox, filters by those keywords, and 
+     logs entries to a Google Sheet. Would you like 
+     to run this once or schedule it regularly?
+```
+
+**Once you approve the plan:**
+- The workflow executes in real-time
+- You see progress updates in the chat
+- The board view shows which agents are working on what
+- Results are generated and delivered
+- Errors are handled and communicated
+
+**During execution, you can:**
+- Monitor progress in real-time
+- Pause execution if needed
+- Provide additional context mid-run
+
+## Describing Your Manual Process
+
+The best way to get Maia to automate something is to describe how you currently do it manually.
+
+💬 _Right now, I go to our G2.com company page every Friday. 
+I scroll through new reviews, copy any that mention 
+specific features, paste them into a Google Doc, and 
+then email the doc to our product team with a summary 
+of common themes._
+
+✅ **Maia understands:**
+  - Where to find information (G2.com)
+  - What to look for (feature mentions)
+  - Where to store it (Google Doc)
+  - Who needs it (product team via email)
+  - When to do it (weekly on Friday)
+
+<br/>
+
+💬 _I need to monitor our G2 reviews and share relevant 
+feedback with the product team weekly._
+
+✅ **Maia will ask:**
+  - Which reviews are "relevant"?
+  - How should the feedback be formatted?
+  - Any specific team members to notify?
+  - Preferred delivery method?
+
+## Effective Communication Tips
+
+If Maia seems confused or the results aren't what you expected:
+
+<CardGroup cols={2}>
+  <Card title="Provide an Example" icon="file-lines">
+    Show Maia what the ideal output looks like:
+
+    "Here's an example of the format I want: 
+    .."
+  </Card>
+  
+  <Card title="Break It Down" icon="list-ol">
+    Split complex requests into smaller steps:
+    
+    "First, just show me the research results. 
+    Then we'll create the document."
+    
+  </Card>
+  
+  <Card title="Describe the 'Why'" icon="lightbulb">
+    Explain the business context:
+    
+    "I need this for a board presentation, so it 
+    should be formal and data-focused."
+    
+  </Card>
+</CardGroup>
+
+<br/>
+<br/>
+<br/>
+
+<Card title="Next: Understanding Prompts" icon="rectangle-list" href="/planning/prompts">
+  Learn how to edit individual step instructions
+</Card>

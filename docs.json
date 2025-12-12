@@ -1,68 +1,89 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
-  "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+  "name": "Maia Platform",
+  "seo": {
+    "metatags": {
+      "og:title" : "Maia Platform | Documentation",
+      "og:image" : "https://static.wixstatic.com/media/6e1ef0_a939f8f46c3247029136c52b9e872a29~mv2.jpg"
+    }
+  },
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
   },
   "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#39DA5D",
+    "light": "#39DA5D",
+    "dark": "#39DA5D"
+  },
+  "thumbnails": {
+    "background": "https://static.wixstatic.com/media/6e1ef0_cbc46aea63884e1a815797290483dd65~mv2.jpg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:contact@modularmind.app"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Open Workspace",
+      "href": "https://maia.is"
+    }
+  },
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
-        "groups": [
+        "tab": "Get Started",
+        "pages": [
           {
-            "group": "Getting started",
+            "group": "Introduction",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "intro/what-is-maia",
+              "intro/how-maia-works",
+              "intro/quick-start"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Planning & Building Workflows",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "planning/conversation-interface",
+              "planning/prompts"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Maia's Capabilities",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "capabilities/web-intelligence",
+              "capabilities/secure-browser",
+              "capabilities/document-generation",
+              "capabilities/website-app-generation"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Connections & Actions",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
+              "integrations/native-connections",
+              "integrations/intelligent-actions",
+              "integrations/custom-actions"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Deployment & Automation",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "deployment/cloud-deployment",
+              "deployment/scheduled-automations",
+              "deployment/webhooks"
+            ]
+          },
+          {
+            "group": "Security & FAQ",
+            "pages": [
+              "security-privacy",
+              "faq"
             ]
           }
         ]
@@ -71,52 +92,35 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Community",
+          "icon": "discord",
+          "href": "https://discord.gg/wemwHAM4bg"
         },
         {
           "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "icon": "book",
+          "href": "https://join.modularmind.app/blog"
         }
       ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
     }
   },
   "contextual": {
     "options": [
      "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
+     "view"
    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "youtube" : "https://www.youtube.com/@modularmindapp?sub_confirmation=1",
+      "linkedin": "https://www.linkedin.com/company/96028211",
+      "x": "https://x.com/modularmindapp",
+      "discord" : "https://discord.gg/wemwHAM4bg"
+    }
+  },
+  "integrations": {
+    "ga4": {
+        "measurementId": "G-XL0YGEPZYZ"
     }
   }
 }

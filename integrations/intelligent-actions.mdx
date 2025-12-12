@@ -1,0 +1,49 @@
+---
+title: 'Intelligent Action Use'
+description: 'How Maia dynamically discovers and uses the right tools for your workflows'
+---
+
+## Smart Tool Selection
+
+Maia doesn't require you to manually specify which connections to use. It intelligently selects the right actions based on your intent.
+
+<Note>
+  Think of it like talking to a skilled assistant who knows which tools to reach for — you describe the outcome, not the implementation.
+</Note>
+
+## Suggested Actions vs. Available Actions
+
+### Suggested Actions
+
+When building a workflow, Maia **suggests** actions for AI agents based on your request:
+
+**Your Request:**
+```
+"Retrieve Instagram posts from my feed, generate a similar
+image for posting,and email me it as an attachment."
+```
+
+**Maia's suggested actions for the prompt:**
+- Generate Image: Create an image using Nano Banana Pro
+- Gmail: Send email with attachment
+
+These suggestions appear in the workflow visualization before execution.
+
+<Frame> <img src="/images/suggested_actions.jpg" alt="Edit modular prompt sections" className="my-6 rounded-lg border border-zinc-300 dark:border-zinc-600" noZoom /></Frame>
+
+### Available Actions (Dynamic Discovery)
+
+During execution, if Maia encounters a situation not covered by the plan, it **searches its action library** for solutions:
+
+**Scenario:**
+- Planned action: "Read the report from Dashboard"
+- Problem: Dashboard requires 2FA code
+- **Dynamic discovery**: Maia searches for "Get 2FA code" actions
+- **Finds**: Gmail action to read 2FA code from email
+- **Executes**: Reads code, completes authentication, proceeds with download
+
+**Result:** Workflow adapts without manual intervention
+
+<Card title="Next: Custom Actions" icon="wrench" href="/integrations/custom-actions">
+  Learn how to teach Maia new actions with custom API calls
+</Card>

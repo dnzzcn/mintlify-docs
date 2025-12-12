@@ -1,0 +1,192 @@
+---
+title: 'Security & Privacy'
+description: 'How Maia protects your data, credentials, and business information'
+---
+
+## Security First
+
+Maia handles sensitive business data and credentials. Security and privacy are fundamental to every aspect of the platform.
+
+<Note>
+  Your data is **your data**. Maia processes it only as needed for your workflows and **never** uses it to train AI models or share with third parties.
+</Note>
+
+## Data Handling Principles
+
+### 1. Isolation
+
+**Your data is completely isolated:**
+- Each account operates in a separate, encrypted environment
+- No data leakage between customers
+- Even ModularMind staff cannot access your data without explicit permission
+
+### 2. Transient Processing
+
+**Data is not stored permanently:**
+- AI models process data **in memory** during workflow execution
+- Only results are stored in your workspace
+- Unless you explicitly ask Maia to send it to an external database, processed data is discarded after execution
+
+### 3. No Training Data
+
+<Warning>
+  **Critical:** Your data is **NEVER** used to train AI models.
+</Warning>
+
+When Maia uses GPTs, Claude, or Gemini:
+- Data is sent to these services for processing
+- Maia uses enterprise agreements with these providers that **prohibit training** on customer data
+- Your workflows and data remain confidential
+
+
+
+## Credential Security
+
+### Browser Session Storage
+
+Maia's "Secure Browser" capability uses **air-gapped credentials**:
+
+<Steps>
+  <Step title="You Log In">
+    You authenticate to a website (e.g., Gmail, LinkedIn) in a secure browser session
+  </Step>
+  
+  <Step title="Session Stored">
+    The **session cookies** (not your password) are encrypted and stored
+    
+    **Encryption:** AES-256 encryption at rest
+  </Step>
+  
+  <Step title="Maia Uses Session">
+    When workflows need access, Maia uses the stored session
+    
+    **AI Model Sees:** Only the rendered screen (visual pixels)
+    **AI Model Does NOT See:** Cookies, passwords, authentication tokens
+  </Step>
+  
+  <Step title="You Control">
+    You can revoke stored sessions anytime from your Maia settings
+  </Step>
+</Steps>
+
+**Key Point:** Maia uses your authenticated session, but the AI model only sees the screen output — like watching someone use a computer, not reading their password manager.
+
+### OAuth Tokens
+
+When you authorize Maia to access services:
+
+1. **Standard OAuth 2.0 flow** (same as "Login with Google")
+2. **Tokens stored encrypted**
+3. **Automatic refresh** when tokens expire
+4. **Revocable** from service provider
+
+## Network Security
+
+### Infrastructure
+
+Maia runs on enterprise-grade infrastructure:
+
+- **AWS / GCP**: Industry-leading cloud providers
+- **Private VPCs**: Isolated network environments
+- **Firewalls**: Restrict access to authorized traffic only
+- **DDoS Protection**: Provider-level protection
+
+## Privacy & Compliance
+
+### GDPR Compliance
+
+For EU customers:
+
+✅ **Right to Access**: Download all your data  
+✅ **Right to Erasure**: Delete all data on request  
+✅ **Data Portability**: Export in standard formats  
+✅ **Consent Management**: Clear consent for data processing  
+✅ **Data Processing Agreement**: Available for enterprise customers  
+
+
+## Incident Response
+
+### Monitoring
+
+Maia's security team monitors for:
+- Unauthorized access attempts
+- Unusual API activity
+- Data exfiltration attempts
+- Service disruptions
+
+### Breach Notification
+
+In the unlikely event of a security breach:
+
+<Steps>
+  <Step title="Detection">
+    Automated systems + security team identify issue
+  </Step>
+  
+  <Step title="Containment">
+    Immediate action to stop unauthorized access
+  </Step>
+  
+  <Step title="Notification">
+    Affected customers notified within **72 hours**
+    
+    Email includes:
+    - What happened
+    - What data was affected
+    - What we're doing about it
+    - What you should do
+  </Step>
+  
+  <Step title="Remediation">
+    Fix vulnerability, enhance security
+  </Step>
+  
+  <Step title="Post-Mortem">
+    Public transparency report (if appropriate)
+  </Step>
+</Steps>
+
+
+{/* ## Vulnerability Disclosure
+
+### Responsible Disclosure
+
+Found a security issue? We take it seriously.
+
+**Report to:** security@maia.is
+
+**Please include:**
+- Description of the vulnerability
+- Steps to reproduce
+- Potential impact
+- Your contact info (for follow-up)
+
+**We commit to:**
+- Acknowledge within 24 hours
+- Investigate promptly
+- Keep you updated on remediation
+- Credit you (if desired) in our Hall of Fame
+
+### Bug Bounty Program
+
+Maia runs a bug bounty program for security researchers:
+
+| Severity | Bounty Range |
+|----------|--------------|
+| Critical | $5,000 - $20,000 |
+| High | $1,000 - $5,000 |
+| Medium | $500 - $1,000 |
+| Low | $100 - $500 |
+
+**Details:** https://maia.app/security/bug-bounty */}
+
+## Trust Center
+
+For more security information:
+
+- **[Privacy Policy](https://maia.is/privacy)**: How we handle your data  
+- **[Terms of Service](https://maia.is/terms)**: Legal agreement
+
+<Card title="Next: FAQ" icon="user" href="/faq">
+  Have questions about plans, limits, and model access? Find answers here.
+</Card>

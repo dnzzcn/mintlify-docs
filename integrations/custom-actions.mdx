@@ -1,0 +1,167 @@
+---
+title: 'Custom Actions'
+description: 'Teaching Maia new tricks with custom HTTP requests and API integrations'
+---
+
+## Extend Maia's Capabilities
+
+While Maia has built-in actions, as well as 3rd party connection actions, you can teach it new ones by defining custom API calls. Once created, Maia remembers and uses them intelligently in future workflows.
+
+<Note>
+  Custom actions let you integrate any web service with a RESTful API, from proprietary internal tools to niche third-party services.
+</Note>
+
+## When to Create Custom Actions
+
+<CardGroup cols={2}>
+  <Card title="Internal Tools" icon="building">
+    Your company's custom CRM, inventory system, or proprietary database
+  </Card>
+  
+  <Card title="Niche Services" icon="puzzle-piece">
+    Industry-specific tools not in Maia's built-in library
+  </Card>
+  
+  <Card title="Private APIs" icon="lock">
+    Services behind authentication
+  </Card>
+  
+  <Card title="Legacy Systems" icon="server">
+    Older systems with custom APIs that need specific formatting
+  </Card>
+</CardGroup>
+
+## How It Works
+
+Custom actions are organized into **Platforms** and **Actions** you can define. Each platform represents a service or system, and each platform can have multiple actions.
+
+The key to making custom actions work effectively is using **natural language descriptions**. Maia reads these descriptions to understand what each platform and action does, when to use them, and how to fill in the required parameters automatically during workflow execution.
+
+<Frame> <img src="/images/custom_actions.jpg" alt="Edit modular prompt sections" className="my-6 rounded-lg border border-zinc-300 dark:border-zinc-600" noZoom /></Frame>
+
+## Managing Platforms
+
+The Actions menu displays all your defined platforms. You can:
+
+- **Add Platform**: Create a new platform to group related actions
+- **Enable/Disable Platforms**: Control whether Maia can discover and use actions from a specific platform
+- **Edit Platform**: Update the platform name and description
+
+## Creating and Managing Actions
+
+Within each platform, you can define multiple actions. Each action represents a specific HTTP request (API call) that Maia can execute.
+
+<Frame> <img src="/images/add_action.jpg" alt="Edit modular prompt sections" className="my-6 rounded-lg border border-zinc-300 dark:border-zinc-600" noZoom /></Frame>
+
+### Action Controls
+
+For each action, you can:
+- **Enable/Disable**: Toggle whether Maia can use this action in workflows
+- **Edit Action**: Modify the action configuration
+- **Delete Action**: Remove actions you no longer need
+
+When an action is enabled, Maia can automatically search for and use it when appropriate based on the action's description and the workflow context.
+
+## Adding an HTTP Request Action
+
+To create a new custom action, click **Add Action** within a platform. Then choose **Add an HTTP Request Action**.
+
+<Frame> <img src="/images/http_request_action_setup.jpg" alt="Edit modular prompt sections" className="my-6 rounded-lg border border-zinc-300 dark:border-zinc-600" /></Frame>
+
+When you add a new HTTP request action, you configure the following:
+
+### Basic Information
+
+**Title**: The name of your action (e.g., "Read Database Entry", "Get User Info")
+
+**Description**: A brief explanation of what the action does. This is crucial — Maia uses this description to determine when this action is relevant to use in a workflow.
+
+### Request Configuration
+
+**Method**: Choose the HTTP method for your request:
+- `GET` - Retrieve data
+- `POST` - Create or send data
+- `PATCH` - Update existing data
+
+**URL**: The API endpoint (e.g., `https://api.example.com/data`)
+
+**Use Dynamic Path**: Toggle this if parts of your URL need to be dynamically filled based on parameters
+
+### Parameters
+
+You can define four types of parameters:
+
+#### Query Parameters
+Parameters sent in the URL query string (e.g., `?user_id=123&status=active`)
+
+#### Headers
+HTTP headers sent with the request (e.g., authentication tokens, content types)
+
+For each header, you can specify:
+- **Name**: The header name (e.g., `x-maia-secret`)
+- **Required**: Whether this header must be included
+- **Constant Value**: Set a fixed value so Maia doesn't need to determine it dynamically
+
+#### Path Parameters
+Dynamic segments in the URL path (enabled when "Use Dynamic Path" is toggled)
+
+#### Body Parameters
+Data sent in the request body (for POST and PATCH requests)
+
+### Parameter Configuration
+
+For each parameter (query, header, path, or body), you can define:
+
+**Name**: The parameter name
+
+**Description**: Optional natural language explanation of the parameter. This helps Maia understand when and how to use it, what values are appropriate, and where to get the values from in the workflow context.
+
+**Required**: Toggle whether this parameter is mandatory for the request
+
+**Constant Value**: If a parameter needs a fixed value, enter it here. This is useful for parameters that are required but don't change (like API keys, version numbers, or fixed configurations). When a constant value is set, Maia uses this value automatically without needing to determine it.
+
+## Testing Actions
+
+Before saving an action, you can test it to ensure it works as expected:
+
+1. Click **Test Request** to open the test interface
+2. The test screen shows your configured request details:
+   - Method (GET, POST, PATCH)
+   - URL
+   - Headers
+   - Body Parameters
+3. Manually provide example values for the parameters
+4. Click "Send Request" to execute the test
+5. View the response on the right side to verify the API call works correctly
+
+<Frame> <img src="/images/test_request.jpg" alt="Edit modular prompt sections" className="my-6 rounded-lg border border-zinc-300 dark:border-zinc-600" /></Frame>
+
+This testing capability helps you validate your action configuration before Maia attempts to use it in an actual workflow.
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Clear Descriptions" icon="message">
+    Write detailed, natural language descriptions for platforms, actions, and parameters. The better the description, the more accurately Maia will use them.
+  </Card>
+  
+  <Card title="Use Constants Wisely" icon="lock">
+    Set constant values for parameters that never change (API keys, fixed IDs, version numbers) to simplify Maia's job.
+  </Card>
+  
+  <Card title="Group Related Actions" icon="layer-group">
+    Organize actions into logical platforms to keep your integrations organized and easier to manage.
+  </Card>
+  
+  <Card title="Test Before Deploying" icon="flask">
+    Always test your actions with example data to catch configuration errors early.
+  </Card>
+</CardGroup>
+
+<br/>
+<br/>
+<br/>
+
+<Card title="Next: Cloud Deployment" icon="cloud" href="/deployment/cloud-deployment">
+  Learn how to deploy your workflows to run automatically
+</Card>

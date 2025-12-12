@@ -1,0 +1,521 @@
+---
+title: 'Maia-Built Apps'
+description: 'Creating user interfaces that trigger and interact with your workflows'
+---
+
+## Closing the Loop
+
+Maia can build web applications that serve as **user-friendly interfaces** to your workflows—turning powerful automations into tools anyone on your team can use.
+
+<Note>
+  Imagine giving non-technical team members a simple button that triggers a complex, multi-step AI workflow. That's what Maia-built apps enable.
+</Note>
+
+## Why Build Apps for Workflows?
+
+### The Problem with "AI in the Background"
+
+Powerful workflows are great, but if only you know how to trigger them, adoption is limited.
+
+**Without an app:**
+- "Can you run that competitor analysis for me?"
+- "How do I get that lead enrichment report?"
+- Team depends on you to trigger workflows
+
+**With an app:**
+- Team visits `https://tools.company.com/competitor-analysis`
+- Clicks "Run Analysis"
+- Gets results in minutes
+- **Self-service automation**
+
+## App Types
+
+<CardGroup cols={2}>
+  <Card title="Trigger Dashboards" icon="play">
+    Simple interfaces with buttons to launch workflows
+    
+    **Use for:** On-demand reports, data processing, content generation
+  </Card>
+  
+  <Card title="Form-to-Workflow Apps" icon="pen-to-square">
+    Collect inputs from users, pass to workflow
+    
+    **Use for:** Custom requests, configurable automations
+  </Card>
+  
+  <Card title="Status Dashboards" icon="gauge">
+    Show real-time status of running/scheduled workflows
+    
+    **Use for:** Monitoring, progress tracking
+  </Card>
+  
+  <Card title="Interactive Tools" icon="sliders">
+    Full applications with complex logic and UI
+    
+    **Use for:** Internal tools, calculators, data explorers
+  </Card>
+</CardGroup>
+
+## Building Your First App
+
+### Example: "Generate Report" Button
+
+<Steps>
+  <Step title="Create the Workflow">
+    First, build and test your workflow:
+    
+    ```
+    "Create a workflow that:
+    1. Pulls last week's sales data from our CRM
+    2. Analyzes trends and top performers
+    3. Generates a PDF report
+    4. Emails it to the requester"
+    ```
+    
+    Test it to ensure it works.
+  </Step>
+  
+  <Step title="Build the UI">
+    Now create an interface:
+    
+    ```
+    "Build a web app with:
+    - A big button labeled 'Generate Weekly Sales Report'
+    - When clicked, trigger the sales report workflow
+    - Show a loading spinner while it runs
+    - Display 'Report sent to your email!' when complete"
+    ```
+  </Step>
+  
+  <Step title="Connect Workflow to App">
+    Maia automatically:
+    - Creates a webhook for your workflow
+    - Connects the button's click event to the webhook
+    - Handles response display
+  </Step>
+  
+  <Step title="Deploy">
+    ```
+    "Deploy this app to sales-reports.maia.app"
+    ```
+    
+    **Result:** Live URL accessible to your team
+  </Step>
+  
+  <Step title="Share">
+    Send the link to your team:
+    
+    "Anyone can generate the weekly sales report at: 
+     https://sales-reports.maia.app"
+  </Step>
+</Steps>
+
+## Form-to-Workflow Apps
+
+### Collecting User Inputs
+
+Build apps that let users customize workflow parameters:
+
+**Example: Custom Competitor Analysis**
+
+**Workflow:**
+```
+1. Research specified competitors
+2. Compare on specified criteria
+3. Generate report in requested format
+```
+
+**App UI:**
+```
+Form Fields:
+- Competitor Names (text input, comma-separated)
+- Comparison Criteria (checkboxes):
+  ☐ Pricing
+  ☐ Features
+  ☐ Customer Reviews
+  ☐ Market Share
+- Report Format (dropdown): PDF / Google Doc / Email
+- Recipient Email (text input)
+
+[Submit Button]
+```
+
+**User Experience:**
+1. User fills out form
+2. Clicks "Submit"
+3. Maia triggers workflow with provided parameters
+4. Workflow executes with custom inputs
+5. User gets confirmation: "Report will be ready in 5-10 minutes"
+
+**Implementation:**
+```
+"Build a form that collects competitor names, comparison 
+criteria, and delivery preferences. When submitted, 
+trigger the 'Competitor Analysis' workflow with these 
+inputs and show a confirmation message."
+```
+
+## Interactive Status Dashboards
+
+### Real-Time Workflow Monitoring
+
+Show users what's happening:
+
+**Example: Content Generation Dashboard**
+
+**UI Components:**
+- **Active Workflows**: List of currently running jobs
+- **Queue**: Pending requests waiting to execute
+- **Recent Completions**: Last 10 finished jobs with links to results
+- **Statistics**: Total runs today, average time, success rate
+
+**User Actions:**
+- View details of any job
+- Cancel running jobs
+- Re-run failed jobs
+- Download results
+
+**Implementation:**
+```
+"Create a dashboard that shows:
+1. All active 'Blog Post Generation' workflows with progress %
+2. A list of completed posts with links
+3. Stats on total posts generated this week
+4. A button to trigger a new post generation
+
+Connect this to the 'Blog Post Generation' workflow 
+and update status in real-time."
+```
+
+## Multi-Workflow Apps
+
+### Workflow Orchestration Interface
+
+One app can trigger multiple workflows:
+
+**Example: Marketing Operations Dashboard**
+
+**Dashboard Sections:**
+
+<Tabs>
+  <Tab title="Social Media">
+    **Actions:**
+    - Generate this week's social media posts
+    - Schedule posts across platforms
+    - Analyze engagement from last week
+    
+    **Workflows:**
+    - `Social_Content_Generator`
+    - `Social_Scheduler`
+    - `Engagement_Analyzer`
+  </Tab>
+  
+  <Tab title="Email Campaigns">
+    **Actions:**
+    - Create new email campaign
+    - Send to segment
+    - View performance metrics
+    
+    **Workflows:**
+    - `Email_Content_Creator`
+    - `Campaign_Sender`
+    - `Email_Analytics`
+  </Tab>
+  
+  <Tab title="Content Library">
+    **Actions:**
+    - Generate blog post
+    - Create infographic
+    - Draft press release
+    
+    **Workflows:**
+    - `Blog_Post_Writer`
+    - `Infographic_Generator`
+    - `Press_Release_Drafter`
+  </Tab>
+  
+  <Tab title="Reporting">
+    **Actions:**
+    - Weekly marketing summary
+    - Campaign performance report
+    - Competitor analysis
+    
+    **Workflows:**
+    - `Weekly_Summary`
+    - `Campaign_Reporter`
+    - `Competitor_Analysis`
+  </Tab>
+</Tabs>
+
+**Result:** One centralized interface for all marketing automation needs.
+
+## Passing Data Between App and Workflow
+
+### App → Workflow (Inputs)
+
+**Simple parameters:**
+```javascript
+// User clicks button
+onClick: {
+  triggerWorkflow("competitor_analysis", {
+    competitors: ["Company A", "Company B"],
+    criteria: ["pricing", "features"]
+  })
+}
+```
+
+**File uploads:**
+```javascript
+// User uploads invoice PDF
+onFileUpload: {
+  triggerWorkflow("invoice_processor", {
+    file: uploadedPDF,
+    vendor: "Acme Corp"
+  })
+}
+```
+
+### Workflow → App (Outputs)
+
+**Display results:**
+```javascript
+// Workflow completes, returns data
+onWorkflowComplete: (result) => {
+  displayMessage(result.summary);
+  showPDFLink(result.report_url);
+  updateDashboard(result.metrics);
+}
+```
+
+**Stream progress:**
+```javascript
+// Workflow sends updates while running
+onWorkflowProgress: (update) => {
+  updateProgressBar(update.percent);
+  logMessage(update.status);
+}
+```
+
+## Authentication & Permissions
+
+### User Login
+
+Restrict app access to authorized users:
+
+```yaml
+Authentication: Required
+Provider: Google OAuth / Email+Password / SSO
+
+Permissions:
+  - admin@company.com: Can trigger all workflows
+  - team@company.com: Can view results only
+  - external@partner.com: Limited to specific workflows
+```
+
+**User Experience:**
+1. User visits app URL
+2. Prompted to log in
+3. Upon success, sees interface appropriate to their role
+
+### Workflow Ownership
+
+When a user triggers a workflow via app:
+
+```yaml
+Execution Context:
+  Triggered By: user@company.com
+  Run As: workflow_owner@company.com
+  API Credentials: Owner's connected accounts
+  Results Visibility: Both user and owner
+```
+
+This ensures workflows use the correct credentials while tracking who initiated them.
+
+## Advanced Features
+
+### Conditional UI
+
+Show/hide elements based on user role or state:
+
+**Example:**
+```
+"Show the 'Delete Data' button only to users with 
+admin@company.com email. For everyone else, hide it."
+```
+
+### Dynamic Forms
+
+Forms that adapt based on user input:
+
+**Example:**
+```
+If user selects "PDF" format:
+  Show: Color scheme options
+  Hide: Email recipient field
+
+If user selects "Email" format:
+  Show: Email recipient field, subject line
+  Hide: Color scheme options
+```
+
+### Data Tables with Actions
+
+Display data and allow row-level actions:
+
+**Example: Lead Management Dashboard**
+
+| Name | Email | Score | Status | Actions |
+|------|-------|-------|--------|---------|
+| John Doe | john@ex.com | 85 | New | [Enrich] [Email] |
+| Jane Smith | jane@ex.com | 92 | Contacted | [Update] [Schedule] |
+
+Clicking "Enrich" triggers `lead_enrichment` workflow for that specific lead.
+
+### Charts & Visualizations
+
+Integrate data visualization:
+
+```
+"Create a dashboard with:
+- Line chart showing daily sales over last 30 days
+- Pie chart of sales by product category
+- Table of top 10 customers by revenue
+
+Pull data from our CRM API and refresh every hour."
+```
+
+## Mobile Responsiveness
+
+All Maia-built apps are automatically mobile-friendly:
+
+- **Responsive layouts**: Adapt to screen size
+- **Touch-friendly buttons**: Large, easy-to-tap elements
+- **Mobile-optimized forms**: Appropriate input types (email keyboard, number pad, etc.)
+- **Fast loading**: Optimized assets for mobile networks
+
+## Example: End-to-End Scenario
+
+### The Situation
+
+**Company:** Small marketing agency
+
+**Problem:**
+- Clients frequently request competitor analyses
+- Currently: Agency manually researches and creates reports (4-6 hours)
+- Bottleneck: Only 2 people know how to do it
+- Goal: Empower entire team + clients to generate reports
+
+### The Solution
+
+**Step 1: Build the Workflow**
+```
+"Create a workflow that:
+1. Takes competitor names and industry
+2. Researches each competitor (website, reviews, pricing)
+3. Compares their social media presence
+4. Analyzes their content strategy
+5. Generates a 15-page PDF report with findings
+6. Takes ~10 minutes to complete"
+```
+
+**Step 2: Build the App**
+```
+"Build a web app called 'Competitor Insights Generator':
+
+UI:
+- Header: 'Competitor Analysis Report Generator'
+- Form fields:
+  - Industry (dropdown: SaaS, E-commerce, Healthcare, etc.)
+  - Competitor Names (text area, one per line)
+  - Your Company Name (text input)
+  - Comparison Focus (checkboxes):
+    ☐ Pricing Strategy
+    ☐ Content Marketing
+    ☐ Social Media Presence
+    ☐ Product Features
+  - Email for Delivery (text input)
+- Big 'Generate Report' button
+
+Style: Clean, professional, branded with our colors
+```
+
+**Step 3: Deploy**
+```
+"Deploy this app to:
+- URL: insights.agency.com
+- Accessible to: team@agency.com domain + specific client emails
+- Trigger workflow on form submit
+- Show progress: 'Researching... this takes about 10 minutes'
+- On complete: Send email with PDF + show download link"
+```
+
+### The Result
+
+**Before:**
+- Client requests analysis → Assigned to specialist → 4-6 hours of work → Delivered manually
+
+**After:**
+- Client visits `insights.agency.com` → Fills form (2 minutes) → Submits → Gets report via email in 10 minutes
+
+**Impact:**
+- **Time saved**: 4-6 hours → 10 minutes (96% reduction)
+- **Scalability**: Unlimited analyses, no human bottleneck
+- **Quality**: Consistent, comprehensive, professional
+- **Client satisfaction**: Instant gratification
+- **Monetization**: Can charge for access or per-report
+
+## App Analytics
+
+Track usage of your Maia apps:
+
+```
+Dashboard Metrics:
+- Total users
+- Workflows triggered per day/week/month
+- Most popular workflows
+- Average time to completion
+- User satisfaction (if feedback collected)
+```
+
+**Use insights to:**
+- Identify most valuable workflows
+- Optimize slow workflows
+- Understand user needs
+- Plan feature additions
+
+## Customization & Branding
+
+### White-Label Apps
+
+Remove Maia branding for client-facing tools:
+
+```yaml
+Branding:
+  Powered By Maia: Hidden
+  Custom Logo: [Upload your logo]
+  Favicon: [Upload favicon]
+  Custom Domain: tools.yourcompany.com
+```
+
+### Custom Styling
+
+Match your company's design system:
+
+```css
+/* Provide custom CSS */
+:root {
+  --primary-color: #1E3A8A;
+  --secondary-color: #3B82F6;
+  --font-family: 'Inter', sans-serif;
+}
+
+button {
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+```
+
+<Card title="Next: Security & Privacy" icon="shield" href="/security-privacy">
+  Learn how Maia protects your data and credentials
+</Card>

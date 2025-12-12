@@ -1,0 +1,133 @@
+---
+title: 'Prompts'
+description: 'Understanding the building blocks of workflow steps'
+---
+
+import { ModularAccordion, ModularAccordionGroup } from '/snippets/modular-accordion.jsx';
+import { CustomCard } from '/snippets/custom-card.jsx';
+
+## What is a Prompt?
+
+Every step in your workflow is powered by a **prompt** — detailed instructions that tell an AI agent exactly what to do.
+
+<Note>
+  Think of a prompt as a **job description** for an AI agent. It contains all the context, instructions, and expectations for completing one specific task.
+</Note>
+
+## The Problem with Traditional Prompts
+
+Traditionally, prompts are monolithic blocks of text:
+
+_You are a research assistant. Search the web for CRM tools 
+suitable for small bakeries with 10-15 employees. Focus on 
+tools with inventory management, customer communication, and 
+order tracking. Budget is under $500/month. Extract pricing, 
+key features, user ratings, and pros/cons. Format the results 
+as a structured table. Prioritize tools with high ratings and 
+good integration capabilities...
+[continues for several paragraphs]_
+
+
+**Challenges:**
+- Hard to read and understand
+- Difficult to modify one part without breaking others
+- Can't reuse pieces across workflows
+- Overwhelming to edit for non-technical users
+
+## Maia's Modular Approach
+
+Maia breaks prompts into sections — discrete, editable sections that serve specific purposes. Each section can be expanded to view and edit its full content.
+
+**Example:** Research prompt broken into sections
+
+<CustomCard bgColor="#E8EBF3" darkBgColor="#1F2234">
+<ModularAccordionGroup title="Research CRM Tools for Small Bakeries">
+  <ModularAccordion title="Context & Role">
+    You are an expert B2B SaaS researcher with deep expertise in small business CRM tools, specifically focused on understanding the unique requirements of the bakery industry. Your background includes 10+ years analyzing software solutions for food service businesses, with particular emphasis on inventory management and customer relationship systems. You understand the challenges small bakeries face, including managing perishable inventory, handling custom orders, tracking customer preferences for special occasions, maintaining communication with both retail and wholesale clients, and balancing operational efficiency with personalized service. Approach this research with the mindset of a bakery owner who needs practical, cost-effective solutions that can scale with business growth.
+  </ModularAccordion>
+  
+  <ModularAccordion title="Task Definition">
+    Your objective is to find and compare the top 5 CRM tools available in the market that are specifically well-suited for small bakery operations. Focus your research on reputable sources including G2, Capterra, TrustRadius, Software Advice, and verified user reviews to ensure comprehensive coverage. Prioritize tools that have demonstrated success in the food service or retail bakery sector, with verified case studies or testimonials from similar businesses. Evaluate each tool's ease of implementation, learning curve for staff, integration capabilities with common bakery point-of-sale systems, and mobile accessibility for on-the-go management. Additionally, assess the quality and responsiveness of customer support, as this is critical for small businesses without dedicated IT staff.
+  </ModularAccordion>
+  
+  <ModularAccordion title="Requirements & Constraints">
+    The budget must stay under $500 per month for a team size of 10-15 employees, with preference given to solutions offering flexible user-based pricing models. The CRM solution must include inventory management capabilities that can handle perishable goods with expiration date tracking, robust customer communication features supporting email, SMS, and automated birthday or special occasion reminders, and comprehensive order tracking functionality for both one-time and recurring orders. The system should support custom product configurations for specialty cakes and pastries, integrate with at least two major payment processors, and provide mobile apps for both iOS and Android platforms. Data security and GDPR compliance are mandatory requirements, and the solution should offer data export capabilities to prevent vendor lock-in.
+  </ModularAccordion>
+  
+  <ModularAccordion title="Output Format">
+    Present the results as a structured table sorted by rating (highest first), with each tool occupying one row. Each entry should include the tool name with an official website link, detailed pricing information breaking down costs by user tier and any additional fees, key features listed as bullet points with special emphasis on bakery-specific functionality, aggregate user ratings from multiple platforms with the number of reviews cited, and a balanced list of pros and cons with at least 3-4 items in each category. Include a separate column for "Best For" that describes the ideal bakery profile for each tool (e.g., "Best for wholesale-focused bakeries" or "Best for retail bakeries with multiple locations"). Add a final summary row that provides an overall recommendation based on the most common bakery business model.
+  </ModularAccordion>
+</ModularAccordionGroup>
+</CustomCard>
+
+## Benefits of Modular Prompts
+
+### **Surgical Editing**
+
+Change one aspect without rewriting everything. Here's the same CRM research prompt with only the budget requirement modified:
+
+<Tabs>
+<Tab title="Before">
+<CustomCard bgColor="#E8EBF3" darkBgColor="#1F2234">
+<ModularAccordionGroup title="Research CRM Tools for Small Bakeries">
+  <ModularAccordion title="Context & Role">
+    You are an expert B2B SaaS researcher with deep expertise in small business CRM tools, specifically focused on understanding the unique requirements of the bakery industry. Your background includes 10+ years analyzing software solutions for food service businesses, with particular emphasis on inventory management and customer relationship systems. You understand the challenges small bakeries face, including managing perishable inventory, handling custom orders, tracking customer preferences for special occasions, maintaining communication with both retail and wholesale clients, and balancing operational efficiency with personalized service. Approach this research with the mindset of a bakery owner who needs practical, cost-effective solutions that can scale with business growth.
+  </ModularAccordion>
+  
+  <ModularAccordion title="Task Definition">
+    Your objective is to find and compare the top 5 CRM tools available in the market that are specifically well-suited for small bakery operations. Focus your research on reputable sources including G2, Capterra, TrustRadius, Software Advice, and verified user reviews to ensure comprehensive coverage. Prioritize tools that have demonstrated success in the food service or retail bakery sector, with verified case studies or testimonials from similar businesses. Evaluate each tool's ease of implementation, learning curve for staff, integration capabilities with common bakery point-of-sale systems, and mobile accessibility for on-the-go management. Additionally, assess the quality and responsiveness of customer support, as this is critical for small businesses without dedicated IT staff.
+  </ModularAccordion>
+  
+  <ModularAccordion title="Requirements & Constraints">
+    The budget must stay under **$500** per month for a team size of 10-15 employees, with preference given to solutions offering flexible user-based pricing models. The CRM solution must include inventory management capabilities that can handle perishable goods with expiration date tracking, robust customer communication features supporting email, SMS, and automated birthday or special occasion reminders, and comprehensive order tracking functionality for both one-time and recurring orders. The system should support custom product configurations for specialty cakes and pastries, integrate with at least two major payment processors, and provide mobile apps for both iOS and Android platforms. Data security and GDPR compliance are mandatory requirements, and the solution should offer data export capabilities to prevent vendor lock-in.
+  </ModularAccordion>
+  
+  <ModularAccordion title="Output Format">
+    Present the results as a structured table sorted by rating (highest first), with each tool occupying one row. Each entry should include the tool name with an official website link, detailed pricing information breaking down costs by user tier and any additional fees, key features listed as bullet points with special emphasis on bakery-specific functionality, aggregate user ratings from multiple platforms with the number of reviews cited, and a balanced list of pros and cons with at least 3-4 items in each category. Include a separate column for "Best For" that describes the ideal bakery profile for each tool (e.g., "Best for wholesale-focused bakeries" or "Best for retail bakeries with multiple locations"). Add a final summary row that provides an overall recommendation based on the most common bakery business model.
+  </ModularAccordion>
+</ModularAccordionGroup>
+</CustomCard>
+</Tab>
+
+<Tab title="After (Only Changed One Section)">
+<CustomCard bgColor="#E8EBF3" darkBgColor="#1F2234">
+<ModularAccordionGroup title="Research CRM Tools for Small Bakeries">
+  <ModularAccordion title="Context & Role">
+    You are an expert B2B SaaS researcher with deep expertise in small business CRM tools, specifically focused on understanding the unique requirements of the bakery industry. Your background includes 10+ years analyzing software solutions for food service businesses, with particular emphasis on inventory management and customer relationship systems. You understand the challenges small bakeries face, including managing perishable inventory, handling custom orders, tracking customer preferences for special occasions, maintaining communication with both retail and wholesale clients, and balancing operational efficiency with personalized service. Approach this research with the mindset of a bakery owner who needs practical, cost-effective solutions that can scale with business growth.
+  </ModularAccordion>
+  
+  <ModularAccordion title="Task Definition">
+    Your objective is to find and compare the top 5 CRM tools available in the market that are specifically well-suited for small bakery operations. Focus your research on reputable sources including G2, Capterra, TrustRadius, Software Advice, and verified user reviews to ensure comprehensive coverage. Prioritize tools that have demonstrated success in the food service or retail bakery sector, with verified case studies or testimonials from similar businesses. Evaluate each tool's ease of implementation, learning curve for staff, integration capabilities with common bakery point-of-sale systems, and mobile accessibility for on-the-go management. Additionally, assess the quality and responsiveness of customer support, as this is critical for small businesses without dedicated IT staff.
+  </ModularAccordion>
+  
+  <ModularAccordion title="Requirements & Constraints">
+    The budget must stay under **$200** per month for a team size of 10-15 employees, with preference given to solutions offering flexible user-based pricing models. The CRM solution must include inventory management capabilities that can handle perishable goods with expiration date tracking, robust customer communication features supporting email, SMS, and automated birthday or special occasion reminders, and comprehensive order tracking functionality for both one-time and recurring orders. The system should support custom product configurations for specialty cakes and pastries, integrate with at least two major payment processors, and provide mobile apps for both iOS and Android platforms. Data security and GDPR compliance are mandatory requirements, and the solution should offer data export capabilities to prevent vendor lock-in.
+  </ModularAccordion>
+  
+  <ModularAccordion title="Output Format">
+    Present the results as a structured table sorted by rating (highest first), with each tool occupying one row. Each entry should include the tool name with an official website link, detailed pricing information breaking down costs by user tier and any additional fees, key features listed as bullet points with special emphasis on bakery-specific functionality, aggregate user ratings from multiple platforms with the number of reviews cited, and a balanced list of pros and cons with at least 3-4 items in each category. Include a separate column for "Best For" that describes the ideal bakery profile for each tool (e.g., "Best for wholesale-focused bakeries" or "Best for retail bakeries with multiple locations"). Add a final summary row that provides an overall recommendation based on the most common bakery business model.
+  </ModularAccordion>
+</ModularAccordionGroup>
+</CustomCard>
+</Tab>
+</Tabs>
+
+Notice how only the **Requirements & Constraints** section is changed (budget from \$500 to \$200), and the rest of the prompt stays intact.
+
+### **Clarity and Organization**
+
+Instead of hunting through paragraphs, you can expand and edit relevant sections:
+
+<Frame> <img src="/images/edit_prompt_section.jpg" alt="Edit modular prompt sections" className="my-6 rounded-lg border border-zinc-300 dark:border-zinc-600" /></Frame>
+
+- Need to change what data is collected? → Edit **Task Definition**
+- Want different formatting? → Edit **Output Format**
+- Add requirements? → Edit **Requirements & Constraints**
+
+<br/>
+<br/>
+<br/>
+
+<Card title="Next: Explore Maia's Capabilities" icon="wand-magic-sparkles" href="/capabilities/web-intelligence">
+  Learn what Maia can do inside those workflow steps
+</Card>

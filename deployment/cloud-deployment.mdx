@@ -1,0 +1,193 @@
+---
+title: 'Running on the Cloud'
+description: 'Deploy workflows to run automatically without manual oversight'
+---
+
+## From Chat to Automation
+
+Once you've perfected a workflow by watching it run, you can **deploy it to the cloud** to run automatically — no need to keep Maia open or manually trigger execution.
+
+<Note>
+  Cloud deployment transforms one-off tasks into **business processes** that run reliably on schedule or on-demand.
+</Note> 
+
+## Running Workflows Interactively vs. Deployed
+
+The interface remains the same whether you're actively working with Maia or reviewing automated runs. The difference is in how and when workflows execute.
+
+### Running Inside the Session
+
+**What it means:**
+- You initiate the workflow directly in a session
+- Watch execution in real-time
+- Results delivered when complete
+
+**Best for:**
+- Testing new workflows
+- One-off research tasks
+- Tasks requiring human judgment
+- Learning how Maia works
+
+**Example:**
+```
+"Research the top 5 project management tools and 
+create a comparison doc"
+```
+You watch it run, review results, maybe tweak and re-run.
+
+### Deployed Workflows
+
+**What it means:**
+- Workflow runs automatically on schedule or trigger
+- No manual initiation required
+- You can open any deployment to see execution details
+- Results saved in your workspace to access anytime
+
+**Best for:**
+- Recurring tasks (daily, weekly, monthly)
+- Event-triggered actions (when X happens, do Y)
+- Background data processing
+- Scaling operations
+
+**Example:**
+```
+Deploy the "competitor pricing check" workflow to run 
+every Monday at 9 AM and send results to #marketing-channel
+```
+Once you deploy the workflow, it runs automatically every week. You can open the deployment anytime to see execution details and results.
+
+## Deploying a Workflow
+
+There are two ways to deploy a workflow:
+
+### Method 1: Deploy via Chat
+
+Simply tell Maia you want to deploy your workflow, and Maia will suggest the appropriate deployment type with options.
+
+**Example:**
+```
+"Deploy this workflow to run every Monday morning"
+```
+
+Maia will present an interactive suggestion in the chat with:
+- Recommended deployment type (scheduled or webhook)
+- Pre-configured options based on your request
+- A **Deploy** button to review and confirm settings
+
+Click the deploy button in the chat suggestion to review the options and proceed with deployment.
+
+### Method 2: Deploy via Workflow Board
+
+Use the **Deploy workflow** button in the top-right corner of the workflow board.
+
+<Frame>
+  <img src="/images/deploy_workflow.jpg" alt="Deploy workflow button" className="my-6 rounded-lg" />
+</Frame>
+
+**Steps:**
+1. Click the **Deploy workflow** button in the top-right corner
+2. The deployment options panel opens on the right side of the page
+3. Choose your deployment method:
+   - **Schedule** - Run automatically at specific times or intervals
+   - **Create a Webhook** - Trigger via external applications
+   - **Create a Trigger** - Run based on specific events or conditions (coming soon)
+   - **Create an Action** - Create a custom action from your workflow for Maia (coming soon)
+   - **Create a Form** - Collect data and trigger workflow based on submissions (coming soon)
+
+<Frame>
+  <img src="/images/deployment_options.jpg" alt="Deployment options panel" className="my-6 rounded-lg" />
+</Frame>
+
+4. Configure the selected deployment type's settings
+5. Click **Deploy** to activate
+
+## Deployment Limits by Plan
+
+| Plan Tier | Active Deployments |
+|-----------|-------------------|
+| **Free Plan** | 3 deployments |
+| **Plus & Pro Plans** | Unlimited |
+
+<Tip>
+  A "deployment" is a unique workflow configuration. Running the same workflow multiple times (e.g., daily) counts as **one** deployment.
+</Tip>
+
+## Real-World Deployment Examples
+
+### Example 1: Daily Competitor Monitoring
+
+**Workflow:** Check 10 competitor websites for pricing changes
+
+**Deployment:**
+```yaml
+Schedule: Daily at 8 AM (Mon-Fri)
+Execution: Scrape pricing pages, compare to previous day
+Delivery:
+  - If changes detected:
+      → Email: Alert to pricing@company.com
+  - If no changes:
+      → No notification (silent success)
+```
+
+**Benefit:** Team stays informed of market changes without manual checking
+
+### Example 2: Weekly Lead Enrichment
+
+**Workflow:** Process new leads from Google Form submissions
+
+**Deployment:**
+```yaml
+Schedule: Every Monday at 9 AM
+Execution:
+  1. Read form responses from past week
+  2. For each lead, research company (web + LinkedIn)
+  3. Enrich with: industry, size, tech stack
+  4. Add to CRM with enriched data
+Delivery:
+  - Update CRM records
+  - Email summary to sales@company.com
+    (# of new leads, top prospects)
+```
+
+**Benefit:** Sales team gets qualified, enriched leads without manual research
+
+### Example 3: Monthly Financial Report
+
+**Workflow:** Generate comprehensive financial report
+
+**Deployment:**
+```yaml
+Schedule: 1st of every month at 6 AM
+Execution:
+  1. Pull data from accounting software API
+  2. Calculate key metrics (revenue, expenses, profit, growth %)
+  3. Generate charts (revenue trend, expense breakdown)
+  4. Create 20-page PDF report with analysis
+Delivery:
+  - Save to Drive: "Financial Reports/{{YYYY}}/{{Month}}.pdf"
+  - Email to: CFO, CEO, board members
+```
+
+**Benefit:** Consistent, professional monthly reporting with zero manual effort
+
+## Execution Logs
+
+Every cloud deployment maintains workflow run logs:
+
+### What's Logged
+
+- **End time**: When execution completed
+- **Duration**: How long it took
+- **Steps completed**: Which actions ran successfully
+- **Errors**: Any failures or issues
+- **Results**: Summary of what was produced and what actions were taken
+
+<Frame> <img src="/images/deployment_runs.jpg" alt="Edit modular prompt sections" className="my-6 rounded-lg border border-zinc-300 dark:border-zinc-600" /></Frame>
+
+<br/>
+<br/>
+<br/>
+
+<Card title="Next: Scheduled Automations" icon="clock" href="/deployment/scheduled-automations">
+  Deep dive into setting up recurring workflows
+</Card>

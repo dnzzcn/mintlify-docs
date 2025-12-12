@@ -1,0 +1,98 @@
+---
+title: 'Scheduled Deployment'
+description: 'Setting up recurring workflows with scheduling'
+---
+
+## Turn Tasks into Routines
+
+Scheduled deployments let you run workflows at specific times without manual intervention — hourly, daily, weekly or monthly, with custom schedules.
+
+## Setting Up a Schedule
+
+When deploying a workflow, navigate to the **Schedule Your Workflow** section to configure automatic execution at your preferred intervals.
+
+<Frame>
+  <img src="/images/schedule_your_workflow.jpg" alt="Deployment options panel" className="my-6 rounded-lg" />
+</Frame>
+
+### Scheduling Options
+
+<AccordionGroup>
+  <Accordion title="Every Hour" icon="clock">
+    Triggers every hour at your chosen minute offset. Perfect for real-time monitoring tasks, frequent data updates, or time-sensitive automations that need to run throughout the day.
+    
+    **Configuration:**
+    - Select minute offset: 0, 15, 30, or 45 minutes past the hour
+  </Accordion>
+
+  <Accordion title="Every Day" icon="calendar-day">
+    Triggers once per day at your specified time. Ideal for daily reports, routine maintenance tasks, or regular content updates. 
+    
+    **Configuration:**
+    - Select the time of day (e.g., 12:00 AM) when the workflow should execute
+  </Accordion>
+
+  <Accordion title="Every Week" icon="calendar-week">
+    Triggers on specific days of the week at your chosen time. Great for weekly reports, periodic reviews, or tasks that align with your business week.
+    
+    **Configuration:**
+    - Choose which day(s) of the week the workflow should run
+    - Select the hour to trigger execution
+  </Accordion>
+
+  <Accordion title="Every Month" icon="calendar">
+    Triggers on specific day(s) of the month at your chosen time. Perfect for monthly reports, billing cycles, or end-of-month processes.
+    
+    **Configuration:**
+    - Select which numbered day(s) of the month (1-31) to run
+    - Choose the hour to trigger execution
+  </Accordion>
+</AccordionGroup>
+
+## Use Cases
+
+<CardGroup cols={2}>
+  <Card title="Daily Reports" icon="chart-line">
+    Generate and email performance reports every morning at 9 AM
+  </Card>
+  
+  <Card title="Social Media Monitoring" icon="hashtag">
+    Check competitor posts hourly and get notified of new content
+  </Card>
+  
+  <Card title="Weekly Summaries" icon="file-lines">
+    Compile weekly analytics every Monday at 8 AM
+  </Card>
+  
+  <Card title="Monthly Invoicing" icon="receipt">
+    Process billing and send invoices on the 1st of each month
+  </Card>
+</CardGroup>
+
+## Best Practices
+
+<Steps>
+  <Step title="Choose the Right Frequency">
+    Match your schedule to your actual needs. Hourly schedules consume more resources — use them only when necessary.
+  </Step>
+  
+  <Step title="Consider Time Zones">
+    Times are set based on your account's timezone. Ensure your chosen time aligns with your target audience or data availability.
+  </Step>
+  
+  <Step title="Test Before Scheduling">
+    Run your workflow manually first to verify it works correctly before setting up automatic execution.
+  </Step>
+  
+  <Step title="Monitor Performance">
+    Check your scheduled workflow runs regularly to ensure they're running successfully and producing expected results.
+  </Step>
+</Steps>
+
+<Tip>
+  You can pause or modify schedules at any time from your deployment settings without having to redeploy the entire workflow.
+</Tip>
+
+<Card title="Next: Webhooks" icon="webhook" href="/deployment/webhooks">
+  Learn how to trigger workflows from external events
+</Card>
