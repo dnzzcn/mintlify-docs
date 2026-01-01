@@ -120,6 +120,10 @@ For each parameter (query, header, path, or body), you can define:
 
 **Constant Value**: If a parameter needs a fixed value, enter it here. This is useful for parameters that are required but don't change (like API keys, version numbers, or fixed configurations). When a constant value is set, Maia uses this value automatically without needing to determine it.
 
+<Note>
+  Constant values are securely encrypted and remain completely private from the AI models powering Maia (Gemini, GPT, Claude) and their providers (Google, OpenAI, Anthropic). This ensures safe storage of sensitive information like API keys.
+</Note>
+
 ## Testing Actions
 
 Before saving an action, you can test it to ensure it works as expected:

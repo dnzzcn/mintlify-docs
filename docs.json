@@ -2,10 +2,11 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Maia Platform",
+  "description": "A comprehensive knowledge base and help center for Maia. Documentation, guides, tutorials, API references, and troubleshooting to help users get started and build reliable workflows.",
   "seo": {
     "metatags": {
       "og:title" : "Maia Platform | Documentation",
-      "og:image" : "https://static.wixstatic.com/media/6e1ef0_a939f8f46c3247029136c52b9e872a29~mv2.jpg"
+      "og:image" : "https://static.wixstatic.com/media/6e1ef0_cbc46aea63884e1a815797290483dd65~mv2.jpg"
     }
   },
   "logo": {
@@ -60,7 +61,8 @@
               "capabilities/web-intelligence",
               "capabilities/secure-browser",
               "capabilities/document-generation",
-              "capabilities/website-app-generation"
+              "capabilities/website-app-generation",
+              "capabilities/code-execution"
             ]
           },
           {
@@ -75,7 +77,7 @@
             "group": "Deployment & Automation",
             "pages": [
               "deployment/cloud-deployment",
-              "deployment/scheduled-automations",
+              "deployment/scheduled-deployments",
               "deployment/webhooks"
             ]
           },
