@@ -62,7 +62,7 @@
               "capabilities/secure-browser",
               "capabilities/document-generation",
               "capabilities/website-app-generation",
-              "capabilities/code-execution"
+              "capabilities/data-analysis"
             ]
           },
           {
