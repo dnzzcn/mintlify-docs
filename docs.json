@@ -62,7 +62,8 @@
               "capabilities/secure-browser",
               "capabilities/document-generation",
               "capabilities/website-app-generation",
-              "capabilities/data-analysis"
+              "capabilities/data-analysis",
+              "capabilities/agent-skills"
             ]
           },
           {

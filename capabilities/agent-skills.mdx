@@ -1,0 +1,265 @@
+---
+title: 'Agent Skills'
+description: 'Extend Maia with specialized knowledge, workflows, and domain expertise using the Agent Skills standard'
+---
+
+## Give Maia New Capabilities
+
+Agent Skills allow you to package specialized knowledge, workflows, and domain expertise into reusable capabilities that Maia can discover and use automatically. Whether you need brand guidelines enforcement, custom analysis pipelines, or company-specific procedures, skills give Maia the context it needs to work reliably.
+
+## What are Agent Skills?
+
+Agent Skills are a simple, open format for extending AI agents with specialized capabilities. A skill is a folder containing instructions, scripts, and resources that agents can load on demand when relevant to a task.
+
+The format is built on three principles:
+
+<CardGroup cols={3}>
+  <Card title="Self-Documenting" icon="book">
+    Skills are human-readable folders with markdown instructions
+  </Card>
+  
+  <Card title="Portable" icon="box">
+    Use the same skill across different AI agents and platforms
+  </Card>
+  
+  <Card title="Progressive" icon="layer-group">
+    Load only what's needed, keeping context efficient
+  </Card>
+</CardGroup>
+
+### The Agent Skills Standard
+
+Each skill contains a `SKILL.md` file with:
+- **Metadata**: Name and description (so Maia knows when to use it)
+- **Instructions**: Step-by-step guidance in markdown format
+- **Optional Resources**: Scripts, templates, reference documents, and assets
+
+This open format means skills you create for Maia can work with other skills-compatible agents like Claude AI, Claude Code, Gemini CLI, and OpenAI Codex.
+
+## How Maia Uses Agent Skills
+
+Maia integrates Agent Skills using a progressive disclosure approach:
+
+1. **Discovery**: At startup, Maia loads the name and description of all your skills
+2. **Activation**: When a task matches a skill's description, Maia loads the full instructions
+3. **Execution**: Maia follows the instructions, accessing scripts and resources as needed
+
+This keeps Maia fast while giving it access to extensive specialized knowledge on demand.
+
+### Automatic Integration
+
+Unlike other AI agents that require manual skill installation, **all skills in Maia are immediately available across**:
+
+- ✓ All conversation sessions
+- ✓ All workflows (including existing ones)
+- ✓ All deployed automations
+- ✓ All scheduled executions
+
+No configuration, no restarts, no installation steps. Create a skill and Maia can use it instantly.
+
+## Managing Skills in Maia
+
+Access skill management through **Skills** settings where you can create, upload, and manage all your agent skills.
+
+### Creating New Skills
+
+Maia can generate complete Agent Skills for you from any source material:
+
+<Steps>
+  <Step title="Open Skills Settings">
+    Navigate to Skills settings in your Maia workspace from the menu at the bottom left. Click the **Create Skill** button and select **Let Maia Create**.
+  </Step>
+  
+  <Step title="Describe Your Need">
+    Tell Maia what capability you want to create:
+    ```
+    Create a brand guidelines skill that enforces:
+    - Logo usage rules (primary logo for white backgrounds)
+    - Color palette: Primary #39DA5D, Secondary #1A1A1A
+    - Typography: Inter for headings, SF Pro for body text
+    - Never use gradients or shadows in official materials
+    ```
+  </Step>
+  
+  <Step title="Provide Reference Materials">
+    Optionally attach PDFs, text files, or documents containing:
+    - Existing guidelines or procedures
+    - Example workflows
+    - Technical specifications
+    - Company policies
+  </Step>
+  
+  <Step title="Review & Edit">
+    Maia generates a complete skill with proper structure. Review the files in the built-in editor and make any adjustments.
+  </Step>
+  
+  <Step title="Activate">
+    The skill is immediately available to Maia in all contexts
+  </Step>
+</Steps>
+
+### Uploading Existing Skills
+
+If you already have Agent Skills created for other platforms or shared by teammates:
+
+1. **Navigate to Skills settings** from the menu at the bottom left
+2. **Click Create Skill** and select **Upload Skill (ZIP)**
+3. **Select your ZIP file** (ensure the skill is properly packaged)
+4. **Enable the skill** to make it available to Maia
+
+### Managing Your Skills
+
+In the Skills settings panel, you can:
+
+<CardGroup cols={2}>
+  <Card title="Enable/Disable" icon="toggle-on">
+    Control which skills are active without deleting them
+  </Card>
+  
+  <Card title="Edit Instructions" icon="pen">
+    Refine skill instructions and update procedures
+  </Card>
+  
+  <Card title="Delete" icon="trash">
+    Remove skills you no longer need
+  </Card>
+</CardGroup>
+
+## Use Cases
+
+Agent Skills excel at capturing specialized knowledge and repeatable workflows:
+
+<AccordionGroup>
+  <Accordion title="Brand Guidelines">
+    **Ensure consistency** across all generated content
+    
+    - Logo usage rules and asset selection
+    - Color palettes and design systems
+    - Typography and formatting standards
+    - Tone of voice and messaging guidelines
+    
+    *Example: "Generate a press release following our brand guidelines" — Maia automatically applies your style rules*
+  </Accordion>
+  
+  <Accordion title="Data Processing">
+    **Standardize analysis workflows**
+    
+    - Custom data cleaning procedures
+    - Industry-specific calculations
+    - Compliance-required transformations
+    - Multi-step analysis pipelines
+    
+    *Example: "Analyze this sales data" — Maia follows your company's specific analysis methodology*
+  </Accordion>
+  
+  <Accordion title="Document Creation">
+    **Generate consistent documents**
+    
+    - Contract templates and legal formats
+    - Report structures and sections
+    - Proposal frameworks
+    - Meeting note templates
+    
+    *Example: "Create a project proposal" — Maia uses your organizational template and requirements*
+  </Accordion>
+  
+  <Accordion title="Code & Development">
+    **Follow coding standards**
+    
+    - Code review checklists
+    - Testing procedures
+    - Deployment workflows
+    - Architecture patterns
+    
+    *Example: "Review this code" — Maia applies your team's specific standards and practices*
+  </Accordion>
+  
+  <Accordion title="Compliance & Legal">
+    **Maintain regulatory compliance**
+    
+    - Approval workflows
+    - Document retention policies
+    - Privacy requirements
+    - Industry regulations (HIPAA, GDPR, SOC2)
+    
+    *Example: "Draft a privacy notice" — Maia ensures compliance with your specific requirements*
+  </Accordion>
+  
+  <Accordion title="Domain Expertise">
+    **Package specialized knowledge**
+    
+    - Industry terminology and context
+    - Technical specifications
+    - Best practices and procedures
+    - Historical context and decisions
+    
+    *Example: "Explain this medical term" — Maia uses your healthcare organization's internal knowledge base*
+  </Accordion>
+</AccordionGroup>
+
+## Example: Creating a Brand Guidelines Skill
+
+Here's how Maia structures a complete Agent Skills package:
+
+```
+brand-guidelines/
+├── SKILL.md              # Main instructions with metadata
+├── references/
+│   ├── colors.md        # Detailed color specifications
+│   ├── typography.md    # Font usage rules
+│   └── examples.md      # Good and bad examples
+└── assets/
+    ├── logo-primary.svg # Logo files
+    └── logo-white.svg
+```
+
+The `SKILL.md` file contains:
+
+```markdown
+---
+name: brand-guidelines
+description: Enforces company brand guidelines including logo usage, color palette, typography, and visual style rules. Use when generating any marketing materials, presentations, or public-facing content.
+---
+
+# Brand Guidelines
+
+## When to use this skill
+Use this skill whenever creating or reviewing:
+- Marketing materials
+- Social media content
+- Presentations
+- Website copy
+- Email campaigns
+
+## Logo Usage
+Always use the primary logo (#39DA5D) on white backgrounds.
+Use the white logo on dark backgrounds (#1A1A1A or darker).
+
+Never:
+- Stretch or distort the logo
+- Add effects (shadows, gradients, outlines)
+- Place on busy backgrounds
+
+## Color Palette
+Primary: #39DA5D (Maia Green)
+Secondary: #1A1A1A (Charcoal)
+...
+```
+
+When you ask Maia to "create a social media post," it automatically:
+1. Recognizes the task matches the brand guidelines skill
+2. Loads the full instructions
+3. Applies your specific brand rules
+4. Generates compliant content
+
+<Tip>
+**Quick Start**: Try creating a skill for your brand's tone of voice. Include 3-5 key principles and some example phrases to use and avoid. Within seconds, Maia will apply this guidance to all content generation.
+</Tip>
+
+<br/>
+<br/>
+<br/>
+
+<Card title="Next: Native Integrations" icon="plug" href="/integrations/native-connections">
+  Learn how Maia connects to Google Workspace and other tools
+</Card>
