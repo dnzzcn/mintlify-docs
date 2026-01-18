@@ -1,43 +1,56 @@
-# Mintlify Starter Kit
+# Welcome to Maia Documentation
 
-Use the starter kit to get your docs deployed and ready to customize.
+Welcome to the official documentation for **Maia** - your intelligent AI platform for automating complex workflows, analyzing data, and building powerful applications.
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+## 🚀 Getting Started
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+New to Maia? Start here to understand what Maia can do for you:
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+- **[What is Maia?](intro/what-is-maia.mdx)** - Learn about Maia's core features and capabilities
+- **[How Maia Works](intro/how-maia-works.mdx)** - Understand the architecture and approach
+- **[Quick Start Guide](intro/quick-start.mdx)** - Get up and running in minutes
 
-## Development
+## 🎯 Key Capabilities
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
+Explore what you can build with Maia:
 
-```
-npm i -g mint
-```
+- **[Agent Skills](capabilities/agent-skills.mdx)** - Leverage AI-powered automation
+- **[Data Analysis](capabilities/data-analysis.mdx)** - Transform data into insights
+- **[Web Intelligence](capabilities/web-intelligence.mdx)** - Extract and analyze web content
+- **[Document Generation](capabilities/document-generation.mdx)** - Create professional documents automatically
+- **[Website & App Generation](capabilities/website-app-generation.mdx)** - Build applications with AI
+- **[Secure Browser](capabilities/secure-browser.mdx)** - Safe and controlled web interactions
 
-Run the following command at the root of your documentation, where your `docs.json` is located:
+## 🔌 Integrations
 
-```
-mint dev
-```
+Connect Maia to your favorite tools and services:
 
-View your local preview at `http://localhost:3000`.
+- **[Native Connections](integrations/native-connections.mdx)** - Pre-built integrations
+- **[Intelligent Actions](integrations/intelligent-actions.mdx)** - Smart automation workflows
+- **[Custom Actions](integrations/custom-actions.mdx)** - Build your own integrations
 
-## Publishing changes
+## 🚢 Deployment
 
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
+Deploy your Maia solutions:
 
-## Need help?
+- **[Cloud Deployment](deployment/cloud-deployment.mdx)** - Deploy to the cloud
+- **[Maia Apps](deployment/maia-apps.mdx)** - Create standalone applications
+- **[Scheduled Deployments](deployment/scheduled-deployments.mdx)** - Automate recurring tasks
+- **[Webhooks](deployment/webhooks.mdx)** - Integrate with external systems
 
-### Troubleshooting
+## 📋 Planning & Configuration
 
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
+Design and optimize your Maia workflows:
 
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+- **[Conversation Interface](planning/conversation-interface.mdx)** - Build natural interactions
+- **[Prompts](planning/prompts.mdx)** - Craft effective AI instructions
+
+## 🔒 Security & Privacy
+
+Learn about our [security and privacy practices](security-privacy.mdx) to understand how we protect your data.
+
+## 💬 Need Help?
+
+- Check out our [FAQ](faq.mdx) for common questions
+- Visit our community forum for support
+- Contact our team for enterprise solutions
