@@ -1,0 +1,48 @@
+---
+title: 'AI Executives'
+description: 'Understanding the AI executive paradigm that powers Maia'
+---
+
+## Beyond Agents
+
+The dominant approach to AI agents today has a structural ceiling: a single context window accumulates every instruction, tool call, and intermediate output until it collapses under its own weight. Agents drift. Priorities blur. Long-horizon work fails because the architecture forces it to hold too much at once with no principled way to offload it.
+
+When the industry talks about agents, it means single-purpose tools — a presentation generator, a support triage bot, a scheduling assistant. That framing puts the burden back on the human to know which tool to call, when, and how to stitch outputs together. You're still the one running the operation.
+
+An AI executive operates at a higher level entirely.
+
+## What Makes an Executive
+
+Three things distinguish an AI executive from an AI agent:
+
+### Workflows
+
+A workflow is a modular SOP — a process designed in detail, deployed reliably, and refined independently. Unlike static documents, workflows compose hierarchically: they can be called by an executive, return results upward, and be modified without touching anything else in the system. This is what makes complex, repeatable operations possible at the executive level.
+
+<Card title="Learn more" icon="arrow-right" href="/workflows/deployed-workflows">
+  See how workflows are deployed and triggered
+</Card>
+
+### Hierarchical Memory
+
+An executive's effectiveness compounds over time. Memory acts as a context fabric across decoupled workflows — the executive knows what happened last week, what's been decided, what constraints apply. Not because it was told again, but because it retains it. Without this, workflows operate in isolation, repeating discovery instead of building on prior results.
+
+<Card title="Learn more" icon="arrow-right" href="/capabilities/memory">
+  See how memory works in Maia
+</Card>
+
+### Multi-Agent Coordination
+
+An executive doesn't execute alone. It coordinates — running specialized agents in parallel, spawning multiple instances where throughput demands it, and synthesizing results from across the swarm. The executive is the coordination layer, not the execution primitive.
+
+## The Executive Paradigm
+
+The human defines the goal and the standards. The executive handles the complexity in between. Operations that used to require entire teams — coordinated, context-aware, sustained across time — are now within reach of a single executive.
+
+<Note>
+  For the full architectural deep-dive on how AI executives work and why they surpass traditional agent frameworks, read [Introducing AI Executives](https://www.modularmind.app/blog/introducing-ai-executives/) on the ModularMind blog.
+</Note>
+
+<Card title="Next: How Maia Works" icon="arrow-right" href="/intro/how-maia-works">
+  Learn about the core execution loop that powers autonomous work
+</Card>

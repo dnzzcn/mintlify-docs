@@ -44,6 +44,7 @@
             "group": "Introduction",
             "pages": [
               "intro/what-is-maia",
+              "intro/ai-executives",
               "intro/how-maia-works",
               "intro/quick-start"
             ]
@@ -58,12 +59,15 @@
           {
             "group": "Maia's Capabilities",
             "pages": [
+              "capabilities/memory",
+              "capabilities/executive-files",
               "capabilities/web-intelligence",
               "capabilities/secure-browser",
               "capabilities/document-generation",
               "capabilities/website-app-generation",
               "capabilities/data-analysis",
               "capabilities/image-generation",
+              "capabilities/human-in-the-loop",
               "capabilities/agent-skills"
             ]
           },
